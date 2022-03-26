@@ -21,7 +21,7 @@ def edit_distance(sentence1, sentence2):
     for i in range(1, len1 + 1):
         for j in range(1, len2 + 1):
             temp = 0 if sentence1[i-1] == sentence2[j-1] else 1
-            dp[i][j] = min(dp[i-1][j-1] + temp, min(dp[i-1][j] + 1, dp[i][j-1]))
+            dp[i][j] = min(dp[i-1][j-1] + temp, min(dp[i-1][j] + 1, dp[i][j-1] + 1))
     return dp[len1, len2]
 
 distance = edit_distance("assdds", "sad")
